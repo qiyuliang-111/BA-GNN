@@ -39,7 +39,9 @@ Each graph sample contains node features, graph connectivity, edge attributes, a
 
 The node features include spatial coordinates, node-type information, and operating-condition information.
 
-The edge attributes include relative displacement, edge length, unit direction vector, and edge type.
+The edge attributes include normalized relative displacement, normalized edge
+length, and the unit direction vector. The edge type is stored separately in
+the `edge_type` tensor.
 
 The target variables are the pressure coefficient Cp and the velocity components U and V.
 A detailed description of the graph-data format is provided in dataset_description/data_format_description.md.
