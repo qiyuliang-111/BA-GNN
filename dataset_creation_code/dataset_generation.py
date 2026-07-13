@@ -1,18 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-SA-GNN dataset creation with automatic boundary-recognition timing.
-
-Timing scope
-------------
-Only the following three operations are included in the boundary-recognition time:
-1. Construct unique edges and count edge occurrences;
-2. Classify internal, airfoil-boundary, and far-field edges;
-3. Assign node types from the classified boundary edges.
-
-CGNS/ASCII file reading, KD-tree matching, edge-feature construction, tensor
-conversion, and torch.save are intentionally excluded.
-
-
 """
 
 import glob
