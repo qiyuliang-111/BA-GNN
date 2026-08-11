@@ -1,0 +1,14 @@
+README_reproducibility.md
+checkpoint/bagnn_seed0_best.pt
+config.yaml
+environment_info.json
+normalization/normalization_stats.json
+normalization/scalers.pkl
+reproducibility/evaluate.py
+reproducibility/fixed_split.json
+reproducibility/fixed_split_loader.py
+reproducibility/inference.py
+reproducibility/model.py
+reproducibility/test_airfoils.txt
+requirements.txt
+reviewer_response_suggested.txt
