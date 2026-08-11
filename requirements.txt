@@ -1,0 +1,13 @@
+# Core runtime dependencies for public BA-GNN inference/evaluation
+numpy>=1.24
+torch==2.0.0
+torch-geometric==2.6.1
+
+# Used by the existing dataset-construction utilities in the repository
+scipy>=1.10
+pandas>=1.5
+h5py>=3.8
+scikit-learn==1.6.1
+
+# Optional: only needed if users read/edit config.yaml programmatically
+PyYAML>=6.0
