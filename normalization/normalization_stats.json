@@ -1,0 +1,37 @@
+{
+  "description": "Training-set StandardScaler statistics used for BA-GNN.",
+  "input_feature_order": [
+    "x",
+    "y",
+    "node_type_feature",
+    "angle_of_attack_deg"
+  ],
+  "target_order": [
+    "Cp",
+    "U",
+    "V"
+  ],
+  "feature_mean": [
+    0.6017162449716045,
+    0.014095313678875263,
+    0.03590640597096937,
+    7.0
+  ],
+  "feature_scale": [
+    1.4745279731293333,
+    1.2946808379501826,
+    0.23116454165317546,
+    3.7416573867739413
+  ],
+  "target_mean": [
+    -0.17021694959517902,
+    24.1737803220201,
+    2.969430687001649
+  ],
+  "target_scale": [
+    0.7142651300580617,
+    12.537189628072957,
+    8.520363128566904
+  ],
+  "note": "Transform: z=(x-mean)/scale. Inverse transform: x=z*scale+mean."
+}
