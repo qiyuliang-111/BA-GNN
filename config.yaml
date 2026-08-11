@@ -1,0 +1,63 @@
+# BA-GNN public reproducibility configuration
+# This file records the settings used in the revised manuscript.
+
+study_scope:
+  flow: two-dimensional steady airfoil flow
+  reynolds_number: 2.4e6
+  mach_number: 0.1
+  training_aoa_deg: [1, 13]
+  preliminary_out_of_range_aoa_deg: [14, 20]
+
+model:
+  name: full_bagnn
+  input_dim: 4
+  edge_dim: 5
+  hidden_dim: 128
+  attention_heads: 3
+  dropout: 0.1
+  outputs: [Cp, U, V]
+  task_head: [128, 64, 1]
+
+data:
+  split_type: geometry-level split by airfoil
+  split_seed: 42
+  train_airfoils: 338
+  validation_airfoils: 62
+  independent_test_airfoils: 8
+  train_cases: 4394
+  validation_cases: 806
+  independent_test_cases: 160
+  fixed_split_file: reproducibility/fixed_split.json
+  normalization_file: normalization/normalization_stats.json
+
+training_protocol_disclosed:
+  training_seeds: [0, 1, 2]
+  batch_size: 8
+  max_epochs: 500
+  optimizer: Adam
+  initial_learning_rate: 1.0e-4
+  weight_decay: 1.0e-5
+  scheduler: ReduceLROnPlateau
+  scheduler_factor: 0.5
+  scheduler_patience: 20
+  minimum_learning_rate: 1.0e-6
+  gradient_clip_max_norm: 1.0
+  early_stopping_patience: 100
+  checkpoint_selection: minimum validation optimization loss
+
+loss:
+  name: boundary_weighted_multitask_mse
+  boundary_weight_beta: 10.0
+  task_weights: [1.0, 1.0, 1.0]
+  normalization: sumW
+
+released_checkpoint:
+  path: checkpoint/bagnn_seed0_best.pt
+  seed: 0
+  best_epoch: 437
+
+software_environment_reported:
+  pytorch: 2.0.0+cu118
+  torch_geometric: 2.6.1
+  cuda: 11.8
+  gpu: NVIDIA RTX A6000
