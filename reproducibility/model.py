@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Public BA-GNN model definition for checkpoint loading and inference.
 
-This file intentionally contains only the model architecture required to load
-and evaluate the released checkpoint. The training loop is not included.
+This file contains the Full BA-GNN model architecture shared by the public
+training, inference, and evaluation entry points.
 """
 
 from __future__ import annotations
