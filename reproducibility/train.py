@@ -2,8 +2,7 @@
 """
 Minimal public training entry point for Full BA-GNN.
 
-This script is intentionally limited to the training protocol needed to
-reproduce the Full BA-GNN runs reported in the revised manuscript. It reuses
+This script provides a minimal standalone implementation of the disclosed Full BA-GNN training protocol reported in the revised manuscript. It reuses
 the public model definition, exact geometry-level split, released
 normalization parameters, and config.yaml.
 
