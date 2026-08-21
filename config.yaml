@@ -51,10 +51,13 @@ loss:
   task_weights: [1.0, 1.0, 1.0]
   normalization: sumW
 
-released_checkpoint:
-  path: checkpoint/bagnn_seed0_best.pt
-  seed: 0
-  best_epoch: 437
+released_checkpoints:
+  - path: checkpoint/bagnn_seed0_best.pt
+    seed: 0
+  - path: checkpoint/bagnn_seed1_best.pt
+    seed: 1
+  - path: checkpoint/bagnn_seed2_best.pt
+    seed: 2
 
 software_environment_reported:
   pytorch: 2.0.0+cu118
